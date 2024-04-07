@@ -105,10 +105,15 @@ class ProductController extends Controller
         } else {
             $size = Size::whereNull('deleted_at')->get();
         }
+
+        $arrToArray = $product->getExtraImage()->toArray();
+        if (!empty($product->getImagePrimary())) {
+            $arrToArray[]['path'] = $product->getImagePrimary();
+        }
         $arrExtraImage = [];
         $dem = 1;
         $dem2 = 1;
-        foreach ($product->getExtraImage()->toArray() as $item) {
+        foreach ($arrToArray as $item) {
             $arrExtraImage[$dem][] = $item;
             if ($dem2 % 3 == 0) {
                 $dem = $dem + 1;
