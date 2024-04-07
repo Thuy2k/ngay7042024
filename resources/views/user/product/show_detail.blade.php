@@ -43,8 +43,9 @@
                     <div class="product-details">
                         <div class="col-sm-5">
                             <div class="view-product">
-                                <img class="img-product-primary" src="{{ asset($product->getImagePrimary()) }}"
-                                    alt="" />
+                                <img class="img-product-primary popup-trigger"
+                                    src="{{ asset($product->getImagePrimary()) }}" alt=""
+                                    data-image="{{ asset($product->getImagePrimary()) }}" />
                             </div>
                             @if (!empty($arrExtraImage))
                                 <div id="similar-product" class="carousel slide" data-ride="carousel">
@@ -376,6 +377,10 @@
                         $('#box-size').html(html);
                         if (res.pathImage != "") {
                             $(".img-product-primary").attr("src", res.pathImage);
+                            $(".img-product-primary").data("image", res.pathImage);
+                            var imageSrc = $('.img-product-primary').data("image");
+                            $(".popup-image").attr("src", imageSrc);
+                            $(".popup-img").fadeIn();
                         }
                     }
                 }
