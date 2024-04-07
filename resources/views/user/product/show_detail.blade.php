@@ -400,6 +400,18 @@
         });
         // end hiệu ứng kính lup
 
+        // --------xử lý xóa sản phẩm đã xem------
+        var resetTime = 24 * 60 * 60 * 1000; // Ví dụ: 24 giờ
+        // Kiểm tra xem đã có giá trị trong localStorage chưa
+        var viewed = localStorage.getItem('viewed');
+        if (viewed) {
+            // Nếu đã có, đặt một hàm để thiết lập lại giá trị của 'viewed' thành null sau một khoảng thời gian
+            setTimeout(function() {
+                localStorage.removeItem('viewed');
+            }, resetTime);
+        }
+
+        // -------end xử lý xóa sp đã xem-------
         function clickSize(id) {
             $('.item-size').removeClass('active');
             $('.size_' + id).addClass('active');

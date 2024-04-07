@@ -97,6 +97,7 @@
 
         function product_viewed() {
             var id_pro = $('#product_viewed_id').val();
+            // alert(id_pro);
             if (id_pro != undefined) {
                 var id = id_pro;
                 var name = document.getElementById('viewed_product_name' + id).value;
@@ -121,7 +122,19 @@
             })
 
             if (matches.length) {
-
+                for (var key in old_data) {
+                    if (old_data.hasOwnProperty(key)) {
+                        var child = old_data[key];
+                        if (child.id == id_pro) {
+                            delete old_data[key];
+                        }
+                    }
+                }
+                old_data.push(newItem);
+                $('#row_viewed').append(
+                    '<div class="row" style="margin:10px 0"><div class="col-md-4"><img width="100%" src="' + newItem
+                    .image + '"></div><div class="col-md-8"><p>' + newItem.name + '</p><p style="color:"#FE980F">' +
+                    newItem.price + '</p><a href="' + newItem.url + '">Xem ngay</a></div>')
             } else {
                 old_data.push(newItem);
                 $('#row_viewed').append(
