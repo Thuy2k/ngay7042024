@@ -195,6 +195,118 @@
                                             @if (isset($list_image[2])) src="{{ asset($list_image[2]->path) }}" @else src="{{ asset('images/product/no-image-product.png') }}" @endif
                                             alt="{{ isset($list_image[2]) ?? '' }}" class="img-thumbnail" />
                                     </div>
+                                    {{-- --------em Thủy thêm------ --}}
+                                    <div class="col-sm-4">
+                                        <div class="custom-file">
+                                            <input type="file" name="image4"
+                                                @if (isset($list_image[3])) value="{{ $list_image[3]->path }}" @endif
+                                                accept=".jpg, .jpeg, .png" class="custom-file-input img-pro"
+                                                id="file4" data-toggle="tooltip"
+                                                title="{{ !empty($list_image[3]->name) ? $list_image[3]->name : 'Chọn ảnh' }} "
+                                                data-placement="bottom">
+                                            <label class="custom-file-label label-image" id="label-file-4"
+                                                for="customFile">{{ isset($list_image[3]->name) ? $list_image[3]->name : 'Chọn ảnh' }}</label>
+                                            <div class="error error-image4"
+                                                @if ($errors->has('image4')) style="display:block" @endif>
+                                                {{ $errors->first('image4') }}</div>
+                                            @if (isset($list_image[3]))
+                                                <input type="hidden" value="{{ $list_image[3]->id }}"
+                                                    name="id_img_3" />
+                                            @endif
+                                        </div>
+                                        <img width="200px" height="200px" id="ImgPre4"
+                                            @if (isset($list_image[3])) src="{{ asset($list_image[3]->path) }}" @else src="{{ asset('images/product/no-image-product.png') }}" @endif
+                                            alt="{{ isset($list_image[3]) ?? '' }}" class="img-thumbnail" />
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="custom-file">
+                                            <input type="file" name="image5"
+                                                @if (isset($list_image[4])) value="{{ $list_image[4]->path }}" @endif
+                                                accept=".jpg, .jpeg, .png" class="custom-file-input img-pro"
+                                                id="file5" data-toggle="tooltip"
+                                                title="{{ !empty($list_image[4]->name) ? $list_image[4]->name : 'Chọn ảnh' }} "
+                                                data-placement="bottom">
+                                            <label class="custom-file-label label-image" id="label-file-5"
+                                                for="customFile">{{ isset($list_image[4]->name) ? $list_image[4]->name : 'Chọn ảnh' }}</label>
+                                            <div class="error error-image5"
+                                                @if ($errors->has('image5')) style="display:block" @endif>
+                                                {{ $errors->first('image5') }}</div>
+                                            @if (isset($list_image[4]))
+                                                <input type="hidden" value="{{ $list_image[4]->id }}"
+                                                    name="id_img_4" />
+                                            @endif
+                                        </div>
+                                        <img width="200px" height="200px" id="ImgPre5"
+                                            @if (isset($list_image[4])) src="{{ asset($list_image[4]->path) }}" @else src="{{ asset('images/product/no-image-product.png') }}" @endif
+                                            alt="{{ isset($list_image[4]) ?? '' }}" class="img-thumbnail" />
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="custom-file">
+                                            <input type="file" name="image6"
+                                                @if (isset($list_image[5])) value="{{ $list_image[5]->path }}" @endif
+                                                accept=".jpg, .jpeg, .png" class="custom-file-input img-pro"
+                                                id="file6" data-toggle="tooltip"
+                                                title="{{ !empty($list_image[5]->name) ? $list_image[5]->name : 'Chọn ảnh' }} "
+                                                data-placement="bottom">
+                                            <label class="custom-file-label label-image" id="label-file-6"
+                                                for="customFile">{{ isset($list_image[5]->name) ? $list_image[5]->name : 'Chọn ảnh' }}</label>
+                                            <div class="error error-image6"
+                                                @if ($errors->has('image6')) style="display:block" @endif>
+                                                {{ $errors->first('image6') }}</div>
+                                            @if (isset($list_image[5]))
+                                                <input type="hidden" value="{{ $list_image[5]->id }}"
+                                                    name="id_img_5" />
+                                            @endif
+                                        </div>
+                                        <img width="200px" height="200px" id="ImgPre6"
+                                            @if (isset($list_image[5])) src="{{ asset($list_image[5]->path) }}" @else src="{{ asset('images/product/no-image-product.png') }}" @endif
+                                            alt="{{ isset($list_image[5]) ?? '' }}" class="img-thumbnail" />
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="custom-file">
+                                            <input type="file" name="image7"
+                                                @if (isset($list_image[6])) value="{{ $list_image[6]->path }}" @endif
+                                                accept=".jpg, .jpeg, .png" class="custom-file-input img-pro"
+                                                id="file7" data-toggle="tooltip"
+                                                title="{{ !empty($list_image[6]->name) ? $list_image[6]->name : 'Chọn ảnh' }} "
+                                                data-placement="bottom">
+                                            <label class="custom-file-label label-image" id="label-file-7"
+                                                for="customFile">{{ isset($list_image[6]->name) ? $list_image[6]->name : 'Chọn ảnh' }}</label>
+                                            <div class="error error-image7"
+                                                @if ($errors->has('image7')) style="display:block" @endif>
+                                                {{ $errors->first('image7') }}</div>
+                                            @if (isset($list_image[6]))
+                                                <input type="hidden" value="{{ $list_image[6]->id }}"
+                                                    name="id_img_6" />
+                                            @endif
+                                        </div>
+                                        <img width="200px" height="200px" id="ImgPre7"
+                                            @if (isset($list_image[6])) src="{{ asset($list_image[6]->path) }}" @else src="{{ asset('images/product/no-image-product.png') }}" @endif
+                                            alt="{{ isset($list_image[6]) ?? '' }}" class="img-thumbnail" />
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="custom-file">
+                                            <input type="file" name="image8"
+                                                @if (isset($list_image[7])) value="{{ $list_image[7]->path }}" @endif
+                                                accept=".jpg, .jpeg, .png" class="custom-file-input img-pro"
+                                                id="file8" data-toggle="tooltip"
+                                                title="{{ !empty($list_image[7]->name) ? $list_image[7]->name : 'Chọn ảnh' }} "
+                                                data-placement="bottom">
+                                            <label class="custom-file-label label-image" id="label-file-8"
+                                                for="customFile">{{ isset($list_image[7]->name) ? $list_image[7]->name : 'Chọn ảnh' }}</label>
+                                            <div class="error error-image8"
+                                                @if ($errors->has('image8')) style="display:block" @endif>
+                                                {{ $errors->first('image8') }}</div>
+                                            @if (isset($list_image[7]))
+                                                <input type="hidden" value="{{ $list_image[7]->id }}"
+                                                    name="id_img_7" />
+                                            @endif
+                                        </div>
+                                        <img width="200px" height="200px" id="ImgPre8"
+                                            @if (isset($list_image[7])) src="{{ asset($list_image[7]->path) }}" @else src="{{ asset('images/product/no-image-product.png') }}" @endif
+                                            alt="{{ isset($list_image[7]) ?? '' }}" class="img-thumbnail" />
+                                    </div>
+                                    {{-- --------end em Thủy thêm------ --}}
                                 </div>
 
                                 @if ($flag)
@@ -421,6 +533,33 @@
             let name = $(this).val().split('\\').pop();
             $('#label-file-3').html(name);
         });
+        // em Thủy thêm
+        $("#file4").change(function() {
+            readURL(this, "#ImgPre4");
+            let name = $(this).val().split('\\').pop();
+            $('#label-file-4').html(name);
+        });
+        $("#file5").change(function() {
+            readURL(this, "#ImgPre5");
+            let name = $(this).val().split('\\').pop();
+            $('#label-file-5').html(name);
+        });
+        $("#file6").change(function() {
+            readURL(this, "#ImgPre6");
+            let name = $(this).val().split('\\').pop();
+            $('#label-file-6').html(name);
+        });
+        $("#file7").change(function() {
+            readURL(this, "#ImgPre7");
+            let name = $(this).val().split('\\').pop();
+            $('#label-file-7').html(name);
+        });
+        $("#file8").change(function() {
+            readURL(this, "#ImgPre8");
+            let name = $(this).val().split('\\').pop();
+            $('#label-file-8').html(name);
+        });
+        // end em Thủy thêm
         // description
     </script>
 @endsection

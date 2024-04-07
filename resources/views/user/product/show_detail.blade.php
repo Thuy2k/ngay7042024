@@ -46,17 +46,33 @@
                                 <img class="img-product-primary" src="{{ asset($product->getImagePrimary()) }}"
                                     alt="" />
                             </div>
-                            @if (!empty($product->getExtraImage()))
+                            @if (!empty($arrExtraImage))
                                 <div id="similar-product" class="carousel slide" data-ride="carousel">
-
                                     <!-- Wrapper for slides -->
                                     <div class="carousel-inner">
-                                        <div class="item active d-flex">
-                                            @foreach ($product->getExtraImage() as $image)
-                                                <div class="box-img"><img src="{{ asset($image->path) }}" alt="">
-                                                </div>
-                                            @endforeach
-                                        </div>
+                                        @foreach ($arrExtraImage as $key => $extraImage)
+                                            <div class="item <?= (int) $key == 1 ? 'active' : '' ?>">
+                                                @foreach ($extraImage as $image)
+                                                    <div class="col-sm-4 box-img">
+                                                        <img class="popup-trigger" src="{{ asset($image['path']) }}"
+                                                            alt="Ảnh sản phẩm nhỏ"
+                                                            data-image="{{ asset($image['path']) }}">
+                                                    </div>
+                                                @endforeach
+                                            </div>
+                                        @endforeach
+                                    </div>
+                                    <a class="left recommended-item-control" href="#similar-product" data-slide="prev">
+                                        <i class="fa fa-angle-left"></i>
+                                    </a>
+                                    <a class="right recommended-item-control" href="#similar-product" data-slide="next">
+                                        <i class="fa fa-angle-right"></i>
+                                    </a>
+                                </div>
+                                <div class="popup-img">
+                                    <div class="popup-content">
+                                        <img src="" alt="Popup Ảnh" class="popup-image">
+                                        <span class="close">X</span>
                                     </div>
                                 </div>
                             @endif
@@ -179,7 +195,8 @@
                                                     @if (Auth::check())
                                                         <span style="color: #FE980F !important;">Mua hàng</span>
                                                     @else
-                                                        <a class="review-login" href="{{ url('/login?detail=true') }}">Đăng
+                                                        <a class="review-login"
+                                                            href="{{ url('/login?detail=true') }}">Đăng
                                                             nhập</a> và <span style="color: #FE980F !important;">mua
                                                             hàng</span>
                                                     @endif
@@ -364,6 +381,24 @@
                 }
             });
         })
+
+        // -----------xử lý hiệu ứng phóng to ảnh bằng kính lúp---------
+        $(".popup-trigger").click(function() {
+            var imageSrc = $(this).data("image");
+            $(".popup-image").attr("src", imageSrc);
+            $(".popup-img").fadeIn();
+        });
+
+        $(".close").click(function() {
+            $(".popup-img").fadeOut();
+        });
+        $(document).click(function(event) {
+            // Kiểm tra xem sự kiện click có xảy ra bên ngoài popup hay không
+            if ($(event.target).closest('.popup-img').length) {
+                $(".popup-img").fadeOut();
+            }
+        });
+        // end hiệu ứng kính lup
 
         function clickSize(id) {
             $('.item-size').removeClass('active');

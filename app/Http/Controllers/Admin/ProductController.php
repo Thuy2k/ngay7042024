@@ -281,7 +281,68 @@ class ProductController extends Controller
             }
             $this->addImageProduct($product, $request->image3);
         }
-
+        // ----em Thủy thêm----
+        if (!empty($request->image4)) {
+            if (!empty($request->id_img_3)) {
+                $image = ImageProduct::find($request->id_img_3);
+                if (!empty($image)) {
+                    if (File::exists(public_path() . $image->path)) {
+                        File::delete(public_path() . $image->path);
+                    }
+                    $image->forceDelete();
+                }
+            }
+            $this->addImageProduct($product, $request->image4);
+        }
+        if (!empty($request->image5)) {
+            if (!empty($request->id_img_4)) {
+                $image = ImageProduct::find($request->id_img_4);
+                if (!empty($image)) {
+                    if (File::exists(public_path() . $image->path)) {
+                        File::delete(public_path() . $image->path);
+                    }
+                    $image->forceDelete();
+                }
+            }
+            $this->addImageProduct($product, $request->image5);
+        }
+        if (!empty($request->image6)) {
+            if (!empty($request->id_img_5)) {
+                $image = ImageProduct::find($request->id_img_5);
+                if (!empty($image)) {
+                    if (File::exists(public_path() . $image->path)) {
+                        File::delete(public_path() . $image->path);
+                    }
+                    $image->forceDelete();
+                }
+            }
+            $this->addImageProduct($product, $request->image6);
+        }
+        if (!empty($request->image7)) {
+            if (!empty($request->id_img_6)) {
+                $image = ImageProduct::find($request->id_img_6);
+                if (!empty($image)) {
+                    if (File::exists(public_path() . $image->path)) {
+                        File::delete(public_path() . $image->path);
+                    }
+                    $image->forceDelete();
+                }
+            }
+            $this->addImageProduct($product, $request->image7);
+        }
+        if (!empty($request->image8)) {
+            if (!empty($request->id_img_7)) {
+                $image = ImageProduct::find($request->id_img_7);
+                if (!empty($image)) {
+                    if (File::exists(public_path() . $image->path)) {
+                        File::delete(public_path() . $image->path);
+                    }
+                    $image->forceDelete();
+                }
+            }
+            $this->addImageProduct($product, $request->image8);
+        }
+        // ----end em Thủy thêm----
         return redirect()->back()->with('success', 'Cập nhật sản phẩm thành công');
     }
 
