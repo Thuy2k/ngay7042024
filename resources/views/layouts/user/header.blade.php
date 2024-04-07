@@ -82,11 +82,24 @@
                     <div class="mainmenu pull-left">
                         <ul class="nav navbar-nav collapse navbar-collapse">
                             <li><a href="{{ URL::to('home') }}" {{-- class="active" --}}>Trang chủ</a></li>
-                            <li class="dropdown"><a class="cursor">Danh mục<i class="fa fa-angle-down"></i></a>
-                                <ul role="menu" class="sub-menu">
+                            <li class="dropdown menu-cat-product"><a class="cursor">Danh mục<i
+                                        class="fa fa-angle-down"></i></a>
+                                <ul role="menu" class="sub-menu sub-menu-1">
                                     @foreach ($categories as $key => $cate)
-                                        <li><a href="{{ URL::to('/category/' . $cate->id) }}">{{ $cate->name }}</a>
-                                        </li>
+                                        @if ($cate->parent_id == 0)
+                                            <li class="li-1"><a
+                                                    href="{{ URL::to('/category/' . $cate->id) }}">{{ $cate->name }}</a>
+                                                <ul class="sub-menu-2">
+                                                    @foreach ($categories as $key2 => $cate2)
+                                                        @if ($cate2->parent_id == $cate->id)
+                                                            <li class="li-2"><a
+                                                                    href="{{ URL::to('/category/' . $cate2->id) }}">{{ $cate2->name }}</a>
+                                                            </li>
+                                                        @endif
+                                                    @endforeach
+                                                </ul>
+                                            </li>
+                                        @endif
                                     @endforeach
                                 </ul>
                             </li>

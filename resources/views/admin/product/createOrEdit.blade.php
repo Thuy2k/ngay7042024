@@ -46,11 +46,22 @@
                                         <label class="label">
                                             Danh mục
                                         </label>
-                                        <select name="category" id="category" class="form-control">
+                                        {{-- <select name="category" id="category" class="form-control">
                                             @foreach ($categories as $category)
                                                 <option @if ($flag && $rows->category->name == $category->name) selected @endif
                                                     value="{{ $category->id }}">{{ $category->name }}</option>
                                             @endforeach
+                                        </select> --}}
+                                        <select class="form-control" name="category" id="category">
+                                            <option value="" style="font-weight: bold">Chọn danh mục</option>
+                                            @if (!empty($ketquacuoi))
+                                                @foreach ($ketquacuoi as $category)
+                                                    <option value="{{ $category['id'] }}"
+                                                        @if ($flag && $rows->category->name == $category['name']) selected @endif>
+                                                        {{ str_repeat('— ', $category['level']) . $category['name'] }}
+                                                    </option>
+                                                @endforeach
+                                            @endif
                                         </select>
                                         <div class="error error-category"
                                             @if ($errors->has('category')) style="display:block" @endif>

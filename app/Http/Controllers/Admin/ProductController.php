@@ -47,8 +47,25 @@ class ProductController extends Controller
     public function create(Request $request)
     {
         $categories = Category::all();
+        function data_tree3($data, $parent_id = 0, $level = 0)
+        {
+            $result = [];
+            foreach ($data as $item) {
+                if ($item['parent_id'] == $parent_id) {
+                    $item['level'] = $level;
+                    $result[] = $item;
+                    // unset($data[$item['id']]);
+                    $child = data_tree3($data, $item['id'], $level + 1);
+                    $result = array_merge($result, $child);
+                }
+            }
+            return $result;
+        }
+        $thuy = json_decode($categories, true);
+        $ketquacuoi = data_tree3($thuy);
         $data = [
             'categories' => $categories,
+            'ketquacuoi' => $ketquacuoi,
             'rows' => null,
             'breadcrumbs'        => [
                 [
@@ -68,12 +85,27 @@ class ProductController extends Controller
     public function edit(Request $request, $id)
     {
         $product = Product::where('id', $id)->whereNull('deleted_at')->with(['category', 'images'])->first();
-        // dd($product);
-        $categories = Category::whereNull('deleted_at')->get();
         if (empty($product)) {
             return redirect()->route('admin.product.index')->with('error', 'Không tìm thấy sản phẩm');
         }
-
+        // dd($product);
+        $categories = Category::whereNull('deleted_at')->get();
+        function data_tree4($data, $parent_id = 0, $level = 0)
+        {
+            $result = [];
+            foreach ($data as $item) {
+                if ($item['parent_id'] == $parent_id) {
+                    $item['level'] = $level;
+                    $result[] = $item;
+                    // unset($data[$item['id']]);
+                    $child = data_tree4($data, $item['id'], $level + 1);
+                    $result = array_merge($result, $child);
+                }
+            }
+            return $result;
+        }
+        $thuy = json_decode($categories, true);
+        $ketquacuoi = data_tree4($thuy);
         $image = ImageProduct::where('product_id', $product->id)->where('is_primary', 1)->first();
         $list_image = ImageProduct::where('product_id', $product->id)->where('is_primary', 0)->get();
 
@@ -81,6 +113,7 @@ class ProductController extends Controller
         // $url = 'admin/user/edit/'.$id;
         $data = [
             'categories' => $categories,
+            'ketquacuoi' => $ketquacuoi,
             'rows' => $product,
             'primary' => $image,
             'list_image' => $list_image,

@@ -1,0 +1,72 @@
+.menu-cat-product {}
+
+.menu-cat-product .sub-menu-2 {
+    background: #fe980f;
+    position: absolute;
+    display: none;
+    right: 0px;
+    padding-left: 0px;
+    top: 0px;
+}
+
+.menu-cat-product .li-1 {
+    position: relative;
+}
+
+.menu-cat-product .li-1:hover .sub-menu-2 {
+    display: block;
+}
+
+.menu-cat-product .sub-menu-2 .li-2:hover a {
+    color: #e2dfdf;
+}
+
+.cat-product-sb {
+    position: relative;
+    overflow: visible !important;
+}
+
+.cat-product-sb .panel-heading-2 {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    background: #eca340 !important;
+    padding: 0px;
+    display: none;
+}
+
+.cat-product-sb:hover .panel-heading-2 {
+    display: block;
+}
+
+.cat-product-sb:hover .panel-heading-2 h4:hover a {
+    color: #443d3d !important;
+}
+
+.cat-product-sb:hover .panel-heading-2 h4 a {
+    color: #ffffff !important;
+}
+
+.cat-product-sb:hover .panel-heading-2 .panel-title a {
+    padding-left: 13px;
+    line-height: 22px;
+    padding: 0px;
+}
+
+.category-products .panel-default .panel-heading-2 {
+    padding: 0px;
+    /* height: 200px; */
+    z-index: 20;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+.category-products .panel-default .panel-heading-2 a {
+    padding: 35px;
+    line-height: 1.6;
+}
+
+.category-products .panel-default .panel-heading-2 h4.panel-title {
+    padding-left: 26px;
+    padding-right: 25px;
+}

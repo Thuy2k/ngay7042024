@@ -17,6 +17,7 @@
     <link href="{{ asset('user/css/price-range.css') }}" rel="stylesheet">
     <link href="{{ asset('user/css/animate.css') }}" rel="stylesheet">
     <link href="{{ asset('user/css/main.css') }}" rel="stylesheet">
+    <link href="{{ asset('user/css/main-2.css') }}" rel="stylesheet">
     <link href="{{ asset('user/css/responsive.css') }}" rel="stylesheet">
     <link href="{{ asset('user/css/sweetalert.css') }}" rel="stylesheet">
     <link href="{{ asset('user/css/style.css') }}" rel="stylesheet">

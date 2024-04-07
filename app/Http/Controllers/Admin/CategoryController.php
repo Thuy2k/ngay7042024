@@ -13,16 +13,32 @@ class CategoryController extends Controller
 
     public function __construct()
     {
-        $this->middleware(['auth','admin']);
+        $this->middleware(['auth', 'admin']);
     }
     public function index(Request $request)
     {
         $query = Category::whereNull('deleted_at');
-        if(!empty($request->search))
-        {
-            $query->where('name','like','%'.$request->search.'%');
+        if (!empty($request->search)) {
+            $query->where('name', 'like', '%' . $request->search . '%');
         }
         $category = $query->paginate(10);
+        // $cat_post =  DB::table('categories')->get();
+        function data_tree($data, $parent_id = 0, $level = 0)
+        {
+            $result = [];
+            foreach ($data as $item) {
+                if ($item['parent_id'] == $parent_id) {
+                    $item['level'] = $level;
+                    $result[] = $item;
+                    // unset($data[$item['id']]);
+                    $child = data_tree($data, $item['id'], $level + 1);
+                    $result = array_merge($result, $child);
+                }
+            }
+            return $result;
+        }
+        $thuy = $category->toArray();
+        $ketquacuoi = data_tree($thuy['data']);
         $data = [
             'rows' => $category,
             'breadcrumbs'        => [
@@ -31,39 +47,38 @@ class CategoryController extends Controller
                     // 'url'  => 'admin/dashboard',
                 ],
             ],
-            'isProduct'=>true,
+            'isProduct' => true,
+            'ketquacuoi' => $ketquacuoi,
         ];
-        return view('admin.category.index',$data);
+        return view('admin.category.index', $data);
     }
 
     public function store(Request $request)
     {
-        if(empty($request->id_category))
-        {
-            $category_check = Category::where('name',$request->name_category)->whereNull('deleted_at')->get();
-            if(count($category_check)>0)
-            {
+        if (empty($request->id_category)) {
+            $category_check = Category::where('name', $request->name_category)->whereNull('deleted_at')->get();
+            if (count($category_check) > 0) {
                 return redirect()->back()->with('error', 'Đã có tên danh mục');
             }
 
             $category = new Category();
             $category->name = $request->name_category;
+            $category->parent_id = $request->parent_id;
             $category->save();
             return redirect()->route('admin.category.index')->with('success', 'Tạo danh mục thành công');
         }
         $category = Category::find($request->id_category);
-        if(empty($category))
-        {
+        if (empty($category)) {
             return redirect()->route('admin.category.index')->with('error', 'Không tìm thấy danh mục');
         }
 
-        $category_check = Category::where('name',$request->name_category)->where('id','<>',$request->id_category)->whereNull('deleted_at')->get();
-        if(count($category_check)>0)
-        {
+        $category_check = Category::where('name', $request->name_category)->where('id', '<>', $request->id_category)->whereNull('deleted_at')->get();
+        if (count($category_check) > 0) {
             return redirect()->back()->with('error', 'Đã có tên danh mục');
         }
-        
+
         $category->name = $request->name_category;
+        $category->parent_id = $request->parent_id;
         $category->save();
         return redirect()->route('admin.category.index')->with('success', 'Cập nhật danh mục thành công');
     }
@@ -73,23 +88,18 @@ class CategoryController extends Controller
         // dd(json_decode($request->list_id));
         $flag = false;
         $list_id = json_decode($request->list_id);
-        foreach($list_id as $id)
-        {
+        foreach ($list_id as $id) {
             $category = Category::find($id);
-            if(!empty($category))
-            {   
-                if(count(Product::where('category_id',$category->id)->whereNull('deleted_at')->get()) != 0)
-                {
-                    return redirect()->back()->with('error', 'Danh mục '.$category->name.' đã có sản phẩm');
+            if (!empty($category)) {
+                if (count(Product::where('category_id', $category->id)->whereNull('deleted_at')->get()) != 0) {
+                    return redirect()->back()->with('error', 'Danh mục ' . $category->name . ' đã có sản phẩm');
                 }
             }
         }
 
-        foreach($list_id as $id)
-        {
+        foreach ($list_id as $id) {
             $category = Category::find($id);
-            if(!empty($category))
-            {   
+            if (!empty($category)) {
                 $category->forceDelete();
             }
         }
