@@ -166,12 +166,24 @@ class ProductController extends Controller
             ->get()
             ->toArray();
 
+        $pathImage = ProductDetail::whereNull('deleted_at')
+            ->where('product_id', $product)
+            ->where('color_id', $color)
+            ->whereNotNull('path')
+            ->first();
+        if (!empty($pathImage)) {
+            $pathImage = $pathImage->path;
+        } else {
+            $pathImage = "";
+        }
         return response()->json([
             'error' => false,
             'message' => 'Tìm thành công',
             'data' => $sizes,
+            'pathImage' => $pathImage
         ]);
     }
+
     public function add_wishlist(Request $request)
     {
 
