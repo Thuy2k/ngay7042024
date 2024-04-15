@@ -4,12 +4,12 @@
             <div class="row">
                 <div class="col-sm-2">
                     <div class="single-widget">
-                        <h2>Về E-Shopper</h2>
+                        <h2>Về Bảo An Luxury</h2>
                         <ul class="nav nav-pills nav-stacked" style="flex-direction: column-reverse;">
-                            <li><a href="{{ url('/about') }}">Giới thiệu</a></li>
-                            <li><a href="{{ url('/exchange') }}">Chính sách đổi trả</a></li>
-                            <li><a href="{{ url('/privacy') }}">Chính sách bảo mật</a></li>
-                            <li><a href="{{ url('/terms') }}">Điều khoản dịch vụ</a></li>
+                            <li><a href="{{ url('/info-web/3') }}">Điều Khoản & Điều Kiện</a></li>
+                            <li><a href="{{ url('/info-web/4') }}">Chính sách đổi trả hàng</a></li>
+                            <li><a href="{{ url('/info-web/5') }}">Chính Sách Bảo Hành</a></li>
+                            <li><a href="{{ url('/info-web/6') }}">Hướng Dẫn Mua Hàng và Thanh Toán</a></li>
                         </ul>
                     </div>
                 </div>
@@ -77,7 +77,7 @@
     <div class="footer-bottom">
         <div class="container">
             <div class="row">
-                <p class="pull-left">Copyright © 2024 E-SHOPPER</p>
+                <p class="pull-left">Copyright © 2024 Bảo An Luxury</p>
             </div>
         </div>
     </div>

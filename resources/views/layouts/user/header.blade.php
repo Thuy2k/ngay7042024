@@ -82,6 +82,7 @@
                     <div class="mainmenu pull-left">
                         <ul class="nav navbar-nav collapse navbar-collapse">
                             <li><a href="{{ URL::to('home') }}" {{-- class="active" --}}>Trang chủ</a></li>
+                            <li><a href="{{ URL::to('info-web/2') }}">Giới thiệu</a></li>
                             <li class="dropdown menu-cat-product"><a class="cursor">Danh mục<i
                                         class="fa fa-angle-down"></i></a>
                                 <ul role="menu" class="sub-menu sub-menu-1">
@@ -103,6 +104,7 @@
                                     @endforeach
                                 </ul>
                             </li>
+                            <li><a href="{{ URL::to('info-web/1') }}">Liên hệ</a></li>
                             <li class="dropdown"><a class="cursor">Tin tức mỗi ngày<i class="fa fa-angle-down"></i></a>
                                 <ul role="menu" class="sub-menu">
                                     @foreach ($category_post as $key => $cate)
@@ -112,7 +114,6 @@
                                     @endforeach
                                 </ul>
                             </li>
-                            <li><a href="{{ URL::to('infor-contact') }}">Liên hệ</a></li>
                         </ul>
                     </div>
                 </div>
