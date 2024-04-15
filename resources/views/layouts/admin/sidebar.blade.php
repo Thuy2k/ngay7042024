@@ -83,6 +83,10 @@
                         href="{{ url('/admin/info-web/edit/6') }}"><i class="fa fa-money"></i>Chính sách mua
                         hàng và thanh toán</a>
                 </li>
+                <hr>
+                <li class=@if (isset($isConfigSub) && (int) $isConfigSub == 1) {{ 'active' }} @endif><a
+                        href="{{ url('/admin/config-sub/index') }}"><i class="fa fa-money"></i>Cấu hình phụ</a>
+                </li>
             </ul>
         </div>
     </div>

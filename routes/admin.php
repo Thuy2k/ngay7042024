@@ -153,3 +153,7 @@ Route::delete('inforcontact/delete', 'InforContactController@delete')->name('adm
 
 Route::get('info-web/edit/{id}', 'InforWebController@index')->name('admin.infor_web.index');
 Route::post('info-web/update/{id}', 'InforWebController@update')->name('admin.infor_web.update');
+
+Route::get('config-sub/index', 'ConfigSubController@index')->name('admin.config-sub.index');
+Route::get('config-sub/edit/{id}', 'ConfigSubController@edit')->name('admin.config-sub.edit');
+Route::post('config-sub/update/{id}', 'ConfigSubController@update')->name('admin.config-sub.update');

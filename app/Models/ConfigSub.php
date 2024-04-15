@@ -7,13 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Auth;
 
-class Page extends Model
+class ConfigSub extends Model
 {
     //
     use SoftDeletes;
     use HasFactory;
-    protected $table = 'pages';
+    protected $table = 'config_sub';
     protected $fillable = [
-        'title', 'content'
+        'key_db', 'value_db'
     ];
 }
