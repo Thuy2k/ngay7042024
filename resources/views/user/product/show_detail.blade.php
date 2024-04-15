@@ -378,8 +378,10 @@
                         }
                         $('#box-size').html(html);
                         if (res.pathImage != "") {
-                            $(".img-product-primary").attr("src", res.pathImage);
-                            $(".img-product-primary").data("image", res.pathImage);
+                            $(".img-product-primary").attr("src", 'https://top4men.vn/public' + res
+                                .pathImage);
+                            $(".img-product-primary").data("image", 'https://top4men.vn/public' + res
+                                .pathImage);
                             var imageSrc = $('.img-product-primary').data("image");
                             $(".popup-image").attr("src", imageSrc);
                             $(".popup-img").fadeIn();
