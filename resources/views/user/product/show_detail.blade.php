@@ -38,8 +38,7 @@
         <div class="container">
             @include('layouts.user.breadcrumb')
             <div class="row">
-                @include('user.parts.category')
-                <div class="col-sm-9 padding-right">
+                <div class="col-sm-9 padding-right main-contain-product">
                     <div class="product-details">
                         <div class="col-sm-5">
                             <div class="view-product">
@@ -88,7 +87,9 @@
                                     <span>
                                         <div>
                                             <div class="price-display">{{ number_format($product->price) }}&#8363;</div>
-
+                                            <div class="description-2">
+                                                @php echo $product->description_2; @endphp
+                                            </div>
                                             <div class="full-width pt-20-custom pb-20-custom">
                                                 <p class="font-16">Màu sắc</p>
                                                 @if (count($colors) > 0)
@@ -338,6 +339,7 @@
                         </div><!--/recommended_items-->
                     @endif
                 </div>
+                @include('user.parts.category')
             </div>
         </div>
     </section>

@@ -163,6 +163,7 @@ class ProductController extends Controller
             'name' => 'required',
             'price' => 'required|numeric|digits_between:4,11',
             'description' => 'required',
+            'description_2' => 'required',
             'image' => 'mimes:jpeg,jpg,png|max:10000',
             'image1' => 'mimes:jpeg,jpg,png|max:10000',
             'image2' => 'mimes:jpeg,jpg,png|max:10000',
@@ -190,6 +191,7 @@ class ProductController extends Controller
             $product = new Product();
             $product->name = $request->name;
             $product->description = $request->description;
+            $product->description_2 = $request->description_2;
             $product->category_id = $request->category;
             $product->price = $request->price;
             $product->save();
@@ -226,6 +228,7 @@ class ProductController extends Controller
 
         $product->name = $request->name;
         $product->description = $request->description;
+        $product->description_2 = $request->description_2;
         $product->category_id = $request->category;
         $product->price = $request->price;
         $product->save();

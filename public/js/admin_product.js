@@ -12,9 +12,6 @@ $('#form-product').submit(function (e) {
     let flag = false;
     let edit = $('#form-product').find('#create').data('edit');
 
-    let ck = CKEDITOR.instances.description.getData();
-    $('#description').val(ck);
-
     //check name
     if ($('#name').val() == '') {
         $('.error-name').html('Nhập tên sản phẩm');
@@ -63,7 +60,6 @@ $('#form-product').submit(function (e) {
         $('.error-description-2').html('');
         $('.error-description-2').css('display', 'none');
     }
-
 
     //Check file
     // console.log(edit);

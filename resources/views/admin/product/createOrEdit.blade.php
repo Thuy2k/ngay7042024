@@ -88,7 +88,7 @@
 {{ $rows->description_2 }}
 @endif
 </textarea>
-                                        <div class="error error-description"
+                                        <div class="error error-description-2"
                                             @if ($errors->has('description_2')) style="display:block" @endif>
                                             {{ $errors->first('description_2') }}</div>
                                     </div>
