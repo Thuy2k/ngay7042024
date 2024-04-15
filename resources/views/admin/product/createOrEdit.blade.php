@@ -80,7 +80,20 @@
                                         </div>
                                     </div>
                                 </div>
-
+                                <div class="form-group row">
+                                    <div class="col-sm-12">
+                                        <label class="label">Chi tiết bên phải</label>
+                                        <textarea id="description-2" rows="5" name="description_2" placeholder="Chi tiết bên phải" class="form-control">
+@if ($flag)
+{{ $rows->description_2 }}
+@endif
+</textarea>
+                                        <div class="error error-description"
+                                            @if ($errors->has('description_2')) style="display:block" @endif>
+                                            {{ $errors->first('description_2') }}</div>
+                                    </div>
+                                    {{-- <div id="editor"></div> --}}
+                                </div>
                                 <div class="form-group row">
                                     <div class="col-sm-12">
                                         <label class="label">Mô tả</label>
@@ -93,7 +106,7 @@
                                             @if ($errors->has('description')) style="display:block" @endif>
                                             {{ $errors->first('description') }}</div>
                                     </div>
-                                    <div id="editor"></div>
+                                    {{-- <div id="editor"></div>     --}}
                                 </div>
 
                                 <div class="form-group row">
@@ -144,7 +157,8 @@
                                                 @if ($errors->has('image1')) style="display:block" @endif>
                                                 {{ $errors->first('image1') }}</div>
                                             @if (isset($list_image[0]))
-                                                <input type="hidden" value="{{ $list_image[0]->id }}" name="id_img_0" />
+                                                <input type="hidden" value="{{ $list_image[0]->id }}"
+                                                    name="id_img_0" />
                                             @endif
                                         </div>
                                         <img width="200px" height="200px" id="ImgPre1"
