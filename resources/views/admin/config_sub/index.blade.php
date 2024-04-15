@@ -35,7 +35,7 @@
                                     <tbody>
                                         @foreach ($rows as $row)
                                             <tr>
-                                                <td>{{ $row->key_db }}</td>
+                                                <td>{{ $row->name_detail }}</td>
                                                 <td>{{ $row->value_db }}</td>
                                                 <td class="td-edit">
                                                     <span title="Edit" class="edit cursor"><a

@@ -29,7 +29,7 @@
                                 <div class="form-group row">
                                     <div class="col-sm-4">
                                         <label class="label">Loại cấu hình</label>
-                                        <input id="name" type="text" value="{{ $row->key_db }}" name="name"
+                                        <input id="name" type="text" value="{{ $row->name_detail }}" name="name"
                                             placeholder="Tên cấu hình" disabled class="form-control">
                                     </div>
                                 </div>
