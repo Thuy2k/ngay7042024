@@ -12,7 +12,7 @@ class InforContactController extends Controller
     //
     public function __construct()
     {
-        $this->middleware(['auth','admin']);
+        $this->middleware(['auth', 'admin']);
     }
     public function index(Request $request)
     {
@@ -26,20 +26,18 @@ class InforContactController extends Controller
                     // 'url'  => 'admin/dashboard',
                 ],
             ],
-            'isPost'=>true,
+            'isPost' => true,
         ];
-        return view('admin.infor_contact.index',$data);
+        return view('admin.infor_contact.index', $data);
     }
 
     public function store(Request $request)
     {
         $infor_contact = InforContact::all();
-        if(count($infor_contact)>0){
+        if (count($infor_contact) > 0) {
             return redirect()->route('admin.infor_contact.index')->with('error', 'Đã có thông tin liên hệ');
-        }
-        else {
-            if(empty($request->id_inforcontact))
-            {
+        } else {
+            if (empty($request->id_inforcontact)) {
                 $infor_contact = new InforContact();
                 $infor_contact->address = $request->address;
                 $infor_contact->time = $request->time;
@@ -49,7 +47,7 @@ class InforContactController extends Controller
                 $infor_contact->save();
                 return redirect()->route('admin.infor_contact.index')->with('success', 'Tạo thông tin thành công');
             }
-            
+
             $infor_contact->address = $request->address;
             $infor_contact->time = $request->time;
             $infor_contact->phone = $request->phone;
@@ -62,14 +60,12 @@ class InforContactController extends Controller
 
     public function delete(Request $request)
     {
-        
+
         $list_id = json_decode($request->list_id);
 
-        foreach($list_id as $id)
-        {
+        foreach ($list_id as $id) {
             $infor_contact = InforContact::find($id);
-            if(!empty($infor_contact))
-            {   
+            if (!empty($infor_contact)) {
                 $infor_contact->forceDelete();
             }
         }

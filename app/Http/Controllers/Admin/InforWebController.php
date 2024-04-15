@@ -34,7 +34,7 @@ class InforWebController extends Controller
         if (!empty($page)) {
             return view('admin.info_web.index', $data);
         }
-        return redirect()->route('admin.product.index')->with('error', 'Không tìm thấy page');
+        return redirect()->back()->with('error', 'Không tìm thấy trang cần sửa');
     }
     public function update(Request $request, $id)
     {

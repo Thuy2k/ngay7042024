@@ -127,4 +127,4 @@ Route::group(['prefix' => 'laravel-filemanager'], function () {
     '\UniSharp\LaravelFilemanager\Lfm'::routes();
 });
 
-Route::get('info-web/{id}', 'InforWebController@index')->name('admin.infor_web.index');
+Route::get('info-web/{id}', 'InforWebController@index')->name('infor_web.index');
