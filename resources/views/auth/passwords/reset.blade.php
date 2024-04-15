@@ -84,8 +84,8 @@
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-body">
-                        <center><a href="{{ route('home') }}"><img src="{{ asset('user/images//home/logo.png') }}"
-                                    alt="" /></a></center>
+                        <center><a href="{{ route('home') }}"><img width="100px"
+                                    src="{{ asset('user/images//home/logo.png') }}" alt="" /></a></center>
 
                         <form method="POST" action="{{ route('password.update') }}">
                             @csrf
