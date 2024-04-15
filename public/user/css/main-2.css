@@ -120,3 +120,7 @@
 }
 
 /* -------------end xử lý sản phẩm hiển thị---------- */
+
+.logo-website img {
+    max-width: 160px;
+}

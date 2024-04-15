@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-sm-2">
                     <div class="single-widget">
-                        <h2>Về Bảo An Luxury</h2>
+                        <h2>Về {{ isset($name_shop) ? $name_shop : 'Bảo An' }}</h2>
                         <ul class="nav nav-pills nav-stacked" style="flex-direction: column-reverse;">
                             <li><a href="{{ url('/info-web/3') }}">Điều Khoản & Điều Kiện</a></li>
                             <li><a href="{{ url('/info-web/4') }}">Chính sách đổi trả hàng</a></li>

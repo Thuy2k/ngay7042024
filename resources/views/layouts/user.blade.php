@@ -48,6 +48,31 @@
 </head><!--/head-->
 
 <body>
+    @php
+        // Gọi model và lấy dữ liệu
+        $config_sub = \App\Models\ConfigSub::all();
+        $phone_1 = '';
+        $phone_2 = '';
+        $email_1 = '';
+        $logo_pc = '';
+        $logo_mobile = '';
+        $name_shop = '';
+        foreach ($config_sub as $item) {
+            if ($item->id == 1) {
+                $phone_1 = $item->value_db;
+            } elseif ($item->id == 2) {
+                $phone_2 = $item->value_db;
+            } elseif ($item->id == 3) {
+                $email_1 = $item->value_db;
+            } elseif ($item->id == 5) {
+                $logo_pc = $item->value_db;
+            } elseif ($item->id == 6) {
+                $logo_mobile = $item->value_db;
+            } elseif ($item->id == 7) {
+                $name_shop = $item->value_db;
+            }
+        }
+    @endphp
     @include('layouts.user.header')
 
     @yield('content')

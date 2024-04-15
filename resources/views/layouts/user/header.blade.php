@@ -1,13 +1,17 @@
 <header id="header"><!--header-->
+
     <div class="header_top"><!--header_top-->
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
                     <div class="contactinfo">
                         <ul class="nav nav-pills">
-                            <li><a href="#"><i class="fa fa-phone"></i> 0379879250</a></li>
-                            <li><a href="#"><i class="fa fa-phone"></i> 0999999999</a></li>
-                            <li><a href="#"><i class="fa fa-envelope"></i> admin@eshop.com</a></li>
+                            <li><a href="#"><i class="fa fa-phone"></i>{{ isset($phone_1) ? $phone_1 : '' }}</a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-phone"></i>{{ isset($phone_2) ? $phone_2 : '' }}</a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-envelope"></i>
+                                    {{ isset($email_1) ? $email_1 : '' }}</a></li>
                         </ul>
                     </div>
                 </div>
@@ -19,10 +23,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-4">
-                    <div class="logo pull-left">
-                        <a href="{{ route('home') }}"><img src="{{ asset('images/logo.png') }}" alt="" /></a>
+                    <div class="logo pull-left logo-website">
+                        <a href="{{ route('home') }}"><img src="{{ $logo_mobile }}" alt="" /></a>
                     </div>
-
                 </div>
                 <div class="col-sm-8">
                     <div class="shop-menu pull-right">
