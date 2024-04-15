@@ -13,7 +13,13 @@
     position: relative;
 }
 
+
 .menu-cat-product .li-1:hover .sub-menu-2 {
+    display: block;
+    z-index: 20;
+}
+
+.menu-cat-product .li-1:hover .sub-menu-2:hover {
     display: block;
 }
 
