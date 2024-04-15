@@ -54,7 +54,7 @@
                 </li>
                 <li class=@if (isset($isInforContact) && $isInforContact) {{ 'active' }} @endif><a
                         href="{{ route('admin.infor_contact.index') }}"> <i class="fa fa-address-book"></i></i>Thông
-                        tin liên hệ</a></li>
+                        tin liên hệ cuối trang</a></li>
                 <li class=@if (isset($isOrder) && $isOrder) {{ 'active' }} @endif><a
                         href="{{ route('admin.order.index') }}"> <i class="fa fa-cart-plus"></i>Đơn hàng</a></li>
                 {{-- <li class=@if (isset($isBill) && $isBill) {{'active'}} @endif><a href="{{route('admin.bill.index')}}"><i class="icon-bill"></i></i>Hoá đơn</a></li> --}}
@@ -65,6 +65,24 @@
                 {{-- <li class=@if (isset($isDiscount) && $isDiscount) {{'active'}} @endif><a href="{{route('admin.discount.index')}}"> <i class="fa fa-percent"></i>Giảm giá</a></li> --}}
                 <li class=@if (isset($isShip) && $isShip) {{ 'active' }} @endif><a
                         href="{{ route('admin.ship.index') }}"><i class="fa fa-money"></i>Phí vận chuyển</a></li>
+                <hr>
+                <li class=@if (isset($isInfoWeb) && (int) $isInfoWeb == 2) {{ 'active' }} @endif><a
+                        href="{{ url('/admin/info-web/edit/2') }}"><i class="fa fa-money"></i>Giới thiệu</a></li>
+                <li class=@if (isset($isInfoWeb) && (int) $isInfoWeb == 1) {{ 'active' }} @endif><a
+                        href="{{ url('/admin/info-web/edit/1') }}"><i class="fa fa-money"></i>Liên hệ</a></li>
+                <li class=@if (isset($isInfoWeb) && (int) $isInfoWeb == 3) {{ 'active' }} @endif><a
+                        href="{{ url('/admin/info-web/edit/3') }}"><i class="fa fa-money"></i>Điều khoản và
+                        điều kiện</a></li>
+                <li class=@if (isset($isInfoWeb) && (int) $isInfoWeb == 4) {{ 'active' }} @endif><a
+                        href="{{ url('/admin/info-web/edit/4') }}"><i class="fa fa-money"></i>Chính sách đổi trả
+                        hàng</a></li>
+                <li class=@if (isset($isInfoWeb) && (int) $isInfoWeb == 5) {{ 'active' }} @endif><a
+                        href="{{ url('/admin/info-web/edit/5') }}"><i class="fa fa-money"></i>Chính sách bảo hành</a>
+                </li>
+                <li class=@if (isset($isInfoWeb) && (int) $isInfoWeb == 6) {{ 'active' }} @endif><a
+                        href="{{ url('/admin/info-web/edit/6') }}"><i class="fa fa-money"></i>Chính sách mua
+                        hàng và thanh toán</a>
+                </li>
             </ul>
         </div>
     </div>

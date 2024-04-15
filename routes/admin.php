@@ -149,3 +149,7 @@ Route::get('inforcontact/create', 'InforContactController@create')->name('admin.
 Route::get('inforcontact/edit/{id}', 'InforContactController@edit')->name('admin.infor_contact.edit');
 Route::post('inforcontact/store', 'InforContactController@store')->name('admin.infor_contact.store');
 Route::delete('inforcontact/delete', 'InforContactController@delete')->name('admin.infor_contact.delete');
+
+
+Route::get('info-web/edit/{id}', 'InforWebController@index')->name('admin.infor_web.index');
+Route::post('info-web/update/{id}', 'InforWebController@update')->name('admin.infor_web.update');
