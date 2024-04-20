@@ -158,7 +158,7 @@
 /* ----------style trên mobile-------- */
 @media only screen and (max-width: 576px) {
     #container_viewed {
-        display: none !important;
+        /* display: none !important; */
     }
 
     .shop-menu .nav.navbar-nav {
@@ -388,6 +388,32 @@
     #search_ajax .show {
         margin-left: 85px;
         top: 38px;
+    }
+
+    .contactinfo .nav.nav-pills {
+        display: flex !important;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .box-support-hotline {
+        right: 16px;
+    }
+
+    #row_viewed .col-md-4 {
+        width: 30%;
+        float: left;
+    }
+
+    #row_viewed {
+        max-height: 162px !important;
+        background: #ececec;
+        padding-left: 16px;
+    }
+
+    div#row_viewed .row {
+        width: 49%;
+        float: left;
     }
 }
 
