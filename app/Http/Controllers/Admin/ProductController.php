@@ -162,6 +162,7 @@ class ProductController extends Controller
         $rule = [
             'name' => 'required',
             'price' => 'required|numeric|digits_between:4,11',
+            'price_old' => 'required|numeric|digits_between:4,11',
             'description' => 'required',
             'description_2' => 'required',
             'image' => 'mimes:jpeg,jpg,png|max:10000',
@@ -172,6 +173,7 @@ class ProductController extends Controller
         $messages = [
             'name.required' => 'Nhập tên sản phẩm',
             'price.numeric' => 'Giá phải là số',
+            'price_old.numeric' => 'Giá cũ phải là số',
             'price.required' => 'Nhập giá sản phẩm',
             'image.required' => 'Chọn ảnh',
             'digits_between' => 'Giá phải nhiều hơn 1000 và nhỏ hơn 99999999999',
@@ -194,6 +196,7 @@ class ProductController extends Controller
             $product->description_2 = $request->description_2;
             $product->category_id = $request->category;
             $product->price = $request->price;
+            $product->price_old = $request->price_old;
             $product->save();
 
             if (!empty($request->image)) {
@@ -231,6 +234,7 @@ class ProductController extends Controller
         $product->description_2 = $request->description_2;
         $product->category_id = $request->category;
         $product->price = $request->price;
+        $product->price_old = $request->price_old;
         $product->save();
 
         if (!empty($request->image)) {

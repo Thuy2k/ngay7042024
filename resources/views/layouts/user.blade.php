@@ -109,8 +109,8 @@
                             var image = data[i].image;
                             row_viewed.append(
                                 '<div class="row" style="margin:10px 0"><div class="col-md-4"><img width="100%" src="' +
-                                image + '"></div><div class="col-md-8"><p>' + name + '</p><p style="color:#FE980F">' +
-                                price + '&#8363;</p><a href="' + url + '">Xem ngay</a></div>')
+                                image + '"></div><div class="col-md-8"><p>' + name + '</p><a href="' + url +
+                                '">Xem ngay</a></div>')
                         }
                     }
                 }

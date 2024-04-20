@@ -124,3 +124,18 @@
 .logo-website img {
     max-width: 160px;
 }
+
+
+.div-price {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.div-price h2.price-old {
+    font-size: 20px;
+    color: #676157 !important;
+    text-decoration: line-through;
+    position: relative;
+    top: 2px;
+}

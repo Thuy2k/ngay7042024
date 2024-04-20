@@ -69,7 +69,7 @@
                                     </div>
 
                                     <div class="col-sm-4">
-                                        <label class="label">Giá</label>
+                                        <label class="label">Giá đang bán</label>
                                         <div class="custom-file">
                                             <input id="price" type="text" name="price"
                                                 @if ($flag) value="{{ format_price_input($rows->price) }}" @endif
@@ -77,6 +77,15 @@
                                             <div class="error error-price"
                                                 @if ($errors->has('price')) style="display:block" @endif>
                                                 {{ $errors->first('price') }}</div>
+                                        </div>
+                                        <label class="label">Giá cũ ( bị gạch ngang )</label>
+                                        <div class="custom-file">
+                                            <input id="price-old" type="text" name="price_old"
+                                                @if ($flag) value="{{ format_price_input($rows->price_old) }}" @endif
+                                                placeholder="Giá cũ" class="form-control ">
+                                            <div class="error error-price"
+                                                @if ($errors->has('price_old')) style="display:block" @endif>
+                                                {{ $errors->first('price_old') }}</div>
                                         </div>
                                     </div>
                                 </div>
@@ -147,8 +156,8 @@
                                             @endphp
                                             <input type="file" name="image1"
                                                 @if (isset($list_image[0])) value="{{ $list_image[0]->path }}" @endif
-                                                accept=".jpg, .jpeg, .png" class="custom-file-input img-pro" id="file1"
-                                                data-toggle="tooltip"
+                                                accept=".jpg, .jpeg, .png" class="custom-file-input img-pro"
+                                                id="file1" data-toggle="tooltip"
                                                 title="{{ !empty($list_image[0]->name) ? $list_image[0]->name : 'Chọn ảnh' }} "
                                                 data-placement="bottom">
                                             <label class="custom-file-label label-image" id="label-file-1"

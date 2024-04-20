@@ -37,7 +37,14 @@
                                             <div class="productinfo text-center">
                                                 <a href="{{ URL::to('/product/' . $pro->id . '/detail') }}">
                                                     <img src="{{ asset($pro->getImagePrimary()) }}" alt="" />
-                                                    <h2>{{ number_format($pro->price) }}&#8363;</h2>
+                                                    <div class="div-price">
+                                                        @if ((int) $pro->price_old > 0)
+                                                            <h2 class="price-old">
+                                                                {{ number_format($pro->price_old) }}&#8363;
+                                                            </h2>
+                                                        @endif
+                                                        <h2 class="price-new">{{ number_format($pro->price) }}&#8363;</h2>
+                                                    </div>
                                                     <p>{{ $pro->name }}</p>
                                                 </a>
                                                 {{-- <input type="button" data-toggle="modal" data-target="#xemnhanh" value="Xem nhanh" class="btn btn-default xemnhanh btn-custom" data-id_product="{{$pro->id}}" name="add-to-cart"> --}}
@@ -97,8 +104,16 @@
                                                                     href="{{ route('user.product.detail', ['id' => $v->id]) }}"><img
                                                                         src="{{ asset(getImageProduct($v->id)) }}"
                                                                         alt="" /></a>
-                                                                <h2 class="price-product">
-                                                                    {{ number_format($v->price) }}&#8363;</h2>
+                                                                <div class="div-price">
+                                                                    @if ((int) $v->price_old > 0)
+                                                                        <h2 class="price-old">
+                                                                            {{ number_format($v->price_old) }}&#8363;
+                                                                        </h2>
+                                                                    @endif
+                                                                    <h2 class="price-product price-new">
+                                                                        {{ number_format($v->price) }}&#8363;</h2>
+                                                                </div>
+
                                                                 <div class="box-name-product"><a
                                                                         href="{{ route('user.product.detail', ['id' => $v->id]) }}"
                                                                         class="name-product cursor">{{ $v->name }}</a>
@@ -140,8 +155,17 @@
                                                                     href="{{ route('user.product.detail', ['id' => $v['id']]) }}"><img
                                                                         src="{{ asset(getImageProduct($v['id'])) }}"
                                                                         alt="" /></a>
-                                                                <h2 class="price-product">
-                                                                    {{ number_format($v['price']) }}&#8363;</h2>
+                                                                <div class="div-price">
+                                                                    @if ((int) $v['price_old'] > 0)
+                                                                        <h2 class="price-old">
+                                                                            {{ number_format($v['price_old']) }}&#8363;
+                                                                        </h2>
+                                                                    @endif
+                                                                    <h2 class="price-product price-new">
+                                                                        {{ number_format($v['price']) }}&#8363;</h2>
+                                                                </div>
+
+
                                                                 <div class="box-name-product"><a
                                                                         href="{{ route('user.product.detail', ['id' => $v['id']]) }}"
                                                                         class="name-product cursor">{{ $v['name'] }}</a>

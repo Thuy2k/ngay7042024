@@ -79,13 +79,12 @@ class HomeController extends Controller
         $product_top_sale = DB::table('order_details')
             ->join('product_details', 'order_details.product_detail_id', '=', 'product_details.id')
             ->join('products', 'products.id', '=', 'product_details.product_id')
-            ->select(DB::raw('count(*) as count_product'), DB::raw('sum(order_details.price) as total_price'), 'products.id', 'products.name', 'products.price')
-            ->groupBy('products.id', 'products.name', 'products.price')
+            ->select(DB::raw('count(*) as count_product'), DB::raw('sum(order_details.price) as total_price'), 'products.id', 'products.name', 'products.price', 'products.price_old')
+            ->groupBy('products.id', 'products.name', 'products.price', 'products.price_old')
             ->orderBy('count_product', 'desc')
             ->orderBy('total_price', 'desc')
             ->limit(12)
             ->get();
-
         $product_top_sale = collect($product_top_sale)->chunk(3)->toArray();
 
         if (end($product_top_sale) && count(end($product_top_sale)) < 3) {
@@ -102,7 +101,6 @@ class HomeController extends Controller
         $product_top_wish = Product::whereIn('id', $list_id_product_wishlist)->get()->toArray();
 
         $product_top_wish = collect($product_top_wish)->chunk(3)->toArray();
-
         return view('user.home.index', compact('title', 'min', 'max', 'categories', 'products', 'slides', 'max_price', 'min_price', 'category_post', 'is_home', 'tab_products', 'product_top_sale', 'product_top_wish', 'infor_contact'));
     }
 
