@@ -31,6 +31,6 @@ class MailCheckout extends Mailable
      */
     public function build()
     {
-        return $this->from('kq909981@gmail.com','EShopper')->subject('Thông tin đơn hàng')->markdown('emails.checkout.checkout', ['order' => $this->data]);
+        return $this->from('admin@gmail.com', 'Bảo An Luxury')->subject('Thông tin đơn hàng')->markdown('emails.checkout.checkout', ['order' => $this->data]);
     }
 }

@@ -84,7 +84,7 @@ return [
     */
     'from' => [
         'address' => 'giaitri1000sub@gmail.com',
-        'name' => 'EShopper',
+        'name' => 'Bảo An Luxury',
     ],
 
     /*

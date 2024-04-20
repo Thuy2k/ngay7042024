@@ -29,6 +29,6 @@ class SendDiscount extends Mailable
      */
     public function build()
     {
-        return  $this->from('kq909981@gmail.com','EShopper')->subject('Thông tin giảm giá')->markdown('emails.discount.user',['discount'=>$this->data]);
+        return  $this->from('admin@gmail.com', 'Bảo An Luxury')->subject('Thông tin giảm giá')->markdown('emails.discount.user', ['discount' => $this->data]);
     }
 }

@@ -10,7 +10,7 @@
     @if (Auth::id())
         <meta name="user_id" content="{{ Auth::id() }}">
     @endif
-    <title>{{ config('app.name', 'EShopper') }}{{ !empty($title) ? ' - ' . $title : '' }}</title>
+    <title>{{ config('app.name', 'Bảo An Luxury') }}{{ !empty($title) ? ' - ' . $title : '' }}</title>
     <link href="{{ asset('user/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('user/css/font-awesome.min.css') }}" rel="stylesheet">
     <link href="{{ asset('user/css/prettyPhoto.css') }}" rel="stylesheet">

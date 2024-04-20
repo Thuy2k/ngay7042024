@@ -23,7 +23,7 @@ class ActiveAccount extends Mailable
         //
         $this->email = $email;
         $this->string = $string;
-        $this->url = url('active/'.$email.'/'.$string);
+        $this->url = url('active/' . $email . '/' . $string);
     }
 
     /**
@@ -34,6 +34,6 @@ class ActiveAccount extends Mailable
     public function build()
     {
         // dd($this->url);
-        return $this->from('kq909981@gmail.com','EShopper')->subject('Kích hoạt tài khoản')->markdown('emails.account.active',['url'=>$this->url]);
+        return $this->from('admin@gmail.com', 'Bảo An Luxury')->subject('Kích hoạt tài khoản')->markdown('emails.account.active', ['url' => $this->url]);
     }
 }
