@@ -2,7 +2,7 @@
     <div class="footer-widget">
         <div class="container">
             <div class="row">
-                <div class="col-sm-2">
+                <div class="col-sm-3">
                     <div class="single-widget">
                         <h2>Về {{ isset($name_shop) ? $name_shop : 'Bảo An' }}</h2>
                         <ul class="nav nav-pills nav-stacked" style="flex-direction: column-reverse;">
@@ -13,17 +13,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-sm-2">
-                    <div class="single-widget">
-                        <h2>Danh mục</h2>
-                        <ul class="nav nav-pills nav-stacked">
-                            @foreach ($categories as $key => $cate)
-                                <li><a href="{{ URL::to('/category/' . $cate->id) }}">{{ $cate->name }}</a></li>
-                            @endforeach
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-2">
+                <div class="col-sm-3">
                     <div class="single-widget">
                         <h2>Tin tức mỗi ngày</h2>
                         <ul class="nav nav-pills nav-stacked">
