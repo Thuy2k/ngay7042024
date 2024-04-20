@@ -41,7 +41,7 @@
                         <li><a href="{{ route('admin.product.index') }}">Sản phẩm</a></li>
                         <li><a href="{{ route('admin.color.index') }}">Màu sắc</a></li>
                         <li><a href="{{ route('admin.size.index') }}">Kích thước</a></li>
-                        <li><a href="{{ route('admin.tag.index') }}">Từ khóa</a></li>
+                        {{-- <li><a href="{{ route('admin.tag.index') }}">Từ khóa</a></li> --}}
                     </ul>
                 </li>
                 <li class=@if (isset($isPost) && $isPost) {{ 'active' }} @endif><a
