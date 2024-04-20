@@ -38,7 +38,7 @@
                                                 <a href="{{ URL::to('/product/' . $pro->id . '/detail') }}">
                                                     <img src="{{ asset($pro->getImagePrimary()) }}" alt="" />
                                                     <div class="div-price">
-                                                        @if ((int) $pro->price_old > 0)
+                                                        @if (isset($pro->price_old) && (int) $pro->price_old > 0)
                                                             <h2 class="price-old">
                                                                 {{ number_format($pro->price_old) }}&#8363;
                                                             </h2>
@@ -105,7 +105,7 @@
                                                                         src="{{ asset(getImageProduct($v->id)) }}"
                                                                         alt="" /></a>
                                                                 <div class="div-price">
-                                                                    @if ((int) $v->price_old > 0)
+                                                                    @if (isset($v->price_old) && (int) $v->price_old > 0)
                                                                         <h2 class="price-old">
                                                                             {{ number_format($v->price_old) }}&#8363;
                                                                         </h2>
@@ -156,7 +156,7 @@
                                                                         src="{{ asset(getImageProduct($v['id'])) }}"
                                                                         alt="" /></a>
                                                                 <div class="div-price">
-                                                                    @if ((int) $v['price_old'] > 0)
+                                                                    @if (isset($v['price_old']) && (int) $v['price_old'] > 0)
                                                                         <h2 class="price-old">
                                                                             {{ number_format($v['price_old']) }}&#8363;
                                                                         </h2>

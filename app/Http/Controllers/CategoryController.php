@@ -62,7 +62,6 @@ class CategoryController extends Controller
             };
         }
         $products = $query->paginate(12);
-
         $slides = Slide::whereNull('deleted_at')->orderBy('created_at', 'desc')->offset(0)->limit(4)->get();
         $title = $row->name;
         $breadcrumbs = [

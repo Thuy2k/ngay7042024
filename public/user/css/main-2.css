@@ -132,10 +132,14 @@
     gap: 12px;
 }
 
-.div-price h2.price-old {
-    font-size: 20px;
+.div-price .price-old {
+    font-size: 18px;
     color: #676157 !important;
-    text-decoration: line-through;
+    text-decoration: line-through red;
     position: relative;
-    top: 2px;
+    top: 4px;
+}
+
+.div-price.div-price-product-detail .price-old {
+    top: 10px;
 }
