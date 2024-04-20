@@ -32,9 +32,7 @@
 
     <link href="{{ asset('css/user/custom.css') }}" rel="stylesheet">
 
-    <div class="zalo-chat-widget" data-oaid="832119572324877926" data-welcome-message="Rất vui khi được hỗ trợ bạn!"
-        data-autopopup="0" data-width="" data-height=""></div>
-    <script src="https://sp.zalo.me/plugins/sdk.js"></script>
+
     <style>
         #container_viewed {
             display: none;
@@ -48,6 +46,10 @@
 </head><!--/head-->
 
 <body>
+    .<div class="box-support-hotline">
+        <a href="https://zalo.me/0928506789" target="_blank" class="icon icon-zalo" rel="nofollow"><img
+                src="https://page.widget.zalo.me/static/images/2.0/Logo.svg" alt=""></a>
+    </div>
     @php
         // Gọi model và lấy dữ liệu
         $config_sub = \App\Models\ConfigSub::all();

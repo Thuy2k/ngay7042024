@@ -143,3 +143,10 @@
 .div-price.div-price-product-detail .price-old {
     top: 10px;
 }
+
+.box-support-hotline {
+    position: fixed;
+    bottom: 120px;
+    right: 42px;
+    z-index: 10;
+}
