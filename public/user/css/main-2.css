@@ -150,3 +150,245 @@
     right: 42px;
     z-index: 10;
 }
+
+
+
+
+
+/* ----------style trên mobile-------- */
+@media only screen and (max-width: 576px) {
+    #container_viewed {
+        display: none !important;
+    }
+
+    .shop-menu .nav.navbar-nav {
+        display: flex !important;
+        gap: 7px;
+        position: relative;
+        left: -14px;
+        justify-content: space-between;
+    }
+
+    .logo-website img {
+        max-width: 123px;
+    }
+
+    .header-middle .container .row {
+        padding-top: 9px;
+        padding-bottom: 0px;
+    }
+
+    .search_box input {
+        max-width: 195px;
+    }
+
+    .navbar-toggle {
+        background-color: #fe980f;
+    }
+
+    .left-sidebar h2,
+    .brands_products h2 {
+        margin-bottom: 18px;
+        font-size: 16px;
+    }
+
+    .well {
+        padding: 0px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .well #form-filter {
+        display: inline-block;
+    }
+
+    .well #form-filter input {
+        margin-top: 10px;
+        margin-bottom: 11px;
+    }
+
+    .features_items .col-sm-4 {
+        width: 50%;
+        float: left;
+        margin-bottom: -10px;
+    }
+
+    .div-price .price-new {
+        font-size: 16px;
+        margin-top: 5px;
+    }
+
+    .productinfo p {
+        font-size: 14px;
+        padding-right: 4px;
+        padding-left: 4px;
+        min-height: 50px;
+    }
+
+    .choose ul li a {
+        padding: 0px;
+        padding-top: 4px;
+        padding-bottom: 1px;
+    }
+
+    .div-price .price-old {
+        margin: 0px;
+        font-size: 14px;
+        top: 6px;
+    }
+
+    .div-price {
+        gap: 7px;
+    }
+
+    .recommended_items h2 {
+        font-size: 16px;
+        margin-bottom: 12px;
+    }
+
+    div#recommended-item-carousel {}
+
+    #recommended-item-carousel .col-sm-4 {
+        width: 50%;
+        float: left;
+    }
+
+    #recommended-item-carousel1 .col-sm-4 {
+        width: 50%;
+        float: left;
+    }
+
+    .footer-widget .col-sm-2 {
+        padding-left: 17px;
+    }
+
+    .footer-widget .col-sm-3 {
+        display: table-cell !important;
+    }
+
+    .breadcrumbs .breadcrumb li {
+        padding-bottom: 9px;
+    }
+
+    .breadcrumbs .breadcrumb {
+        margin-bottom: 0px;
+    }
+
+    .view-product img {
+        max-width: 67%;
+        margin: 0px auto;
+        display: block;
+    }
+
+    #similar-product .col-sm-4 {
+        width: 33%;
+        float: left;
+    }
+
+    .product-information {
+        padding-top: 15px;
+        text-align: center;
+        padding-left: 15px;
+        padding-bottom: 2px;
+    }
+
+    .product-information h2 {
+        font-size: 17px;
+    }
+
+    .product-information p {
+        font-size: 13px;
+        text-align: left;
+        padding-left: 8px;
+    }
+
+    .div-price.div-price-product-detail {
+        padding-left: 81px;
+        margin-top: -13px;
+        margin-bottom: 7px;
+    }
+
+    .product-information span span.size-item {
+        float: left;
+        width: 44px;
+        height: 33px;
+        margin-top: 7px;
+    }
+
+    .product-information span div {
+        padding-top: 0px;
+    }
+
+    .product-information span label {
+        font-size: 15px;
+    }
+
+    .product-information span input {
+        width: 56px;
+    }
+
+    .register-req,
+    .step-one .heading {
+        font-size: 15px;
+    }
+
+    .sweet-alert {
+        margin-top: -278px !important;
+    }
+
+    .cart_info table tr td {
+        display: block;
+    }
+
+    #container-cart .cart_menu {
+        display: flex;
+    }
+
+    #container-cart .cart_product {
+        width: 26%;
+        float: left;
+    }
+
+    #cart_items .cart_info .cart_description h4 a {
+        font-size: 15px;
+    }
+
+    #cart_items .cart_info .cart_total_price {
+        font-size: 17px;
+        padding-left: 84px;
+    }
+
+    .cart_info table tr td.cart_delete {
+        padding-left: 91px;
+        margin-bottom: 13px;
+    }
+
+    #cart_items .cart_info .cart_price p {
+        font-size: 15px;
+    }
+
+    #cart_items h1 {
+        font-size: 18px;
+        margin-top: -18px;
+    }
+
+    #data-table {
+        position: relative;
+        left: 15px;
+    }
+
+    .cart_items_success .cart_info table tr td {
+        display: inline-block;
+    }
+
+    .cart_items_success .cart_menu {
+        display: none;
+    }
+
+    #search_ajax .show {
+        margin-left: 85px;
+        top: 38px;
+    }
+}
+
+/* --------end style trên mobile--------- */

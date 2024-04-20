@@ -15,7 +15,6 @@
                             @foreach ($slides as $key => $item)
                                 <div class="item @if ($key == 0) active @endif">
                                     <div class="col-sm-6">
-                                        <h1><span>E</span>-SHOPPER</h1>
                                         <h2>{{ $item->title }}</h2>
                                         <p>{{ $item->slide_content }}</p>
                                         <a style="margin-bottom:20px;" target="_blank" class="shop-now"
