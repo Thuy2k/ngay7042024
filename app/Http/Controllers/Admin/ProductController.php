@@ -147,7 +147,7 @@ class ProductController extends Controller
         $imageName = $fileName . "_" . $product->id . "_" . $image->id . "." . $requestImage->getClientOriginalExtension();
 
         $image_resize = Image::make($requestImage->getRealPath());
-        $image_resize->resize(300, 450);
+        $image_resize->resize(300, 300);
         $image_resize->save(public_path('images/product/' . $imageName));
 
         $image->path = '/images/product/' . $imageName;

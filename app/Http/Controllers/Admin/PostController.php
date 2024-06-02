@@ -111,7 +111,7 @@ class PostController extends Controller
         $imageName = $fileName . "_" . $post->id . "_" . $image->id . "." . $requestImage->getClientOriginalExtension();
 
         $image_resize = Image::make($requestImage->getRealPath());
-        $image_resize->resize(300, 450);
+        $image_resize->resize(300, 300);
         $image_resize->save(public_path('images/post/' . $imageName));
 
         $image->path = '/images/post/' . $imageName;

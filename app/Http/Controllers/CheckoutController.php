@@ -286,7 +286,7 @@ class CheckoutController extends Controller
                 ->first();
             // dd($data);
             Mail::to($order->email)->send(new MailCheckout($data));
-            Mail::to('thuy.nguyenvan2000hn@gmail.com')->send(new MailCheckout($data));
+            Mail::to('vip.top4men@gmail.com')->send(new MailCheckout($data));
 
             return redirect()->route('user.order.detail', ['id' => $order->id])->with('success', 'Đặt hàng thành công');
         } else if (isset($request->payment) && $request->payment == 'vnpay') {
